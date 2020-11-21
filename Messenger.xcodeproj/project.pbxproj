@@ -22,7 +22,8 @@
 		0B6178962568A6720074FA73 /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6178952568A6720074FA73 /* NewConversationVC.swift */; };
 		0B61789B2568A6900074FA73 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61789A2568A6900074FA73 /* ProfileVC.swift */; };
 		0B63CCA0256942730018D8DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63CC9F256942730018D8DB /* Extensions.swift */; };
-		0B9E400D25697C7400A4B2EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E400C25697C7400A4B2EC /* GoogleService-Info.plist */; };
+		0B64C39B2569D44E002DBE50 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B64C39A2569D44E002DBE50 /* DatabaseManager.swift */; };
+		0B6E1D352569AC320048986D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E1D342569AC320048986D /* GoogleService-Info.plist */; };
 		207EA018FEE82EF5FC4CF605 /* Pods_MessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64022DFB4EF90348AFBB6780 /* Pods_MessengerTests.framework */; };
 		AE294F83CF92267FB179792C /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC703BFFCA739B15F900CCD1 /* Pods_Messenger.framework */; };
 		AFF1E386EE034EC335BB9A9B /* Pods_Messenger_MessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3D025A7F92BC1C3650A5F8 /* Pods_Messenger_MessengerUITests.framework */; };
@@ -67,8 +68,8 @@
 		0B6178952568A6720074FA73 /* NewConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationVC.swift; sourceTree = "<group>"; };
 		0B61789A2568A6900074FA73 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0B63CC9F256942730018D8DB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0B9E400C25697C7400A4B2EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0B9E401125697C7B00A4B2EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B64C39A2569D44E002DBE50 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		0B6E1D342569AC320048986D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63FA94E1494C95DE16BA2324 /* Pods-Messenger-MessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger-MessengerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Messenger-MessengerUITests/Pods-Messenger-MessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		64022DFB4EF90348AFBB6780 /* Pods_MessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9232950576C16C98B821EDAC /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		0B6178362568A3930074FA73 = {
 			isa = PBXGroup;
 			children = (
-				0B9E400C25697C7400A4B2EC /* GoogleService-Info.plist */,
 				0B6178412568A3930074FA73 /* Messenger */,
 				0B6178582568A3940074FA73 /* MessengerTests */,
 				0B6178632568A3940074FA73 /* MessengerUITests */,
@@ -134,7 +134,7 @@
 		0B6178412568A3930074FA73 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				0B9E401125697C7B00A4B2EC /* GoogleService-Info.plist */,
+				0B6E1D342569AC320048986D /* GoogleService-Info.plist */,
 				0B6178792568A49F0074FA73 /* Resources */,
 				0B6178782568A48A0074FA73 /* ViewModels */,
 				0B6178772568A4800074FA73 /* Models */,
@@ -206,6 +206,7 @@
 				0B6178422568A3930074FA73 /* AppDelegate.swift */,
 				0B6178442568A3930074FA73 /* SceneDelegate.swift */,
 				0B63CC9F256942730018D8DB /* Extensions.swift */,
+				0B64C39A2569D44E002DBE50 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -359,7 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B61784F2568A3940074FA73 /* LaunchScreen.storyboard in Resources */,
-				0B9E400D25697C7400A4B2EC /* GoogleService-Info.plist in Resources */,
+				0B6E1D352569AC320048986D /* GoogleService-Info.plist in Resources */,
 				0B61784C2568A3940074FA73 /* Assets.xcassets in Resources */,
 				0B61784A2568A3930074FA73 /* Main.storyboard in Resources */,
 			);
@@ -490,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6178962568A6720074FA73 /* NewConversationVC.swift in Sources */,
+				0B64C39B2569D44E002DBE50 /* DatabaseManager.swift in Sources */,
 				0B6178912568A64A0074FA73 /* VideoPlayerVC.swift in Sources */,
 				0B6178472568A3930074FA73 /* ConversationsVC.swift in Sources */,
 				0B61789B2568A6900074FA73 /* ProfileVC.swift in Sources */,
